@@ -1,0 +1,200 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* Workshop White */
+    --background: 180 3% 97%;
+    /* Mill Graphite */
+    --foreground: 210 11% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 14%;
+
+    /* Blueprint Blue */
+    --primary: 245 51% 35%;
+    --primary-foreground: 180 3% 97%;
+
+    /* Brushed Steel */
+    --secondary: 203 12% 90%;
+    --secondary-foreground: 210 11% 14%;
+
+    --muted: 203 12% 93%;
+    --muted-foreground: 210 8% 40%;
+
+    /* Process Cyan */
+    --accent: 193 100% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Signal Yellow */
+    --gold: 51 100% 47%;
+    --gold-foreground: 210 11% 14%;
+
+    /* Mill Graphite surface */
+    --graphite: 210 11% 14%;
+    --graphite-foreground: 180 3% 97%;
+
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 203 12% 82%;
+    --input: 203 12% 78%;
+    --ring: 193 100% 39%;
+
+    --radius: 0.125rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 11% 14%;
+    --sidebar-primary: 245 51% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 203 12% 93%;
+    --sidebar-accent-foreground: 210 11% 14%;
+    --sidebar-border: 203 12% 82%;
+    --sidebar-ring: 193 100% 39%;
+  }
+
+  .dark {
+    --background: 210 11% 10%;
+    --foreground: 180 3% 95%;
+    --card: 210 11% 14%;
+    --card-foreground: 180 3% 95%;
+    --popover: 210 11% 14%;
+    --popover-foreground: 180 3% 95%;
+    --primary: 245 51% 60%;
+    --primary-foreground: 210 11% 10%;
+    --secondary: 210 10% 20%;
+    --secondary-foreground: 180 3% 95%;
+    --muted: 210 10% 18%;
+    --muted-foreground: 203 8% 65%;
+    --accent: 193 100% 45%;
+    --accent-foreground: 210 11% 10%;
+    --gold: 51 100% 52%;
+    --gold-foreground: 210 11% 10%;
+    --graphite: 210 11% 14%;
+    --graphite-foreground: 180 3% 95%;
+    --destructive: 0 62% 38%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 10% 24%;
+    --input: 210 10% 26%;
+    --ring: 193 100% 45%;
+    --sidebar-background: 210 11% 12%;
+    --sidebar-foreground: 180 3% 95%;
+    --sidebar-primary: 245 51% 60%;
+    --sidebar-primary-foreground: 210 11% 10%;
+    --sidebar-accent: 210 10% 20%;
+    --sidebar-accent-foreground: 180 3% 95%;
+    --sidebar-border: 210 10% 24%;
+    --sidebar-ring: 193 100% 45%;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased selection:bg-accent selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-10;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-[1440px];
+  }
+
+  .prose-column {
+    @apply max-w-[46rem];
+  }
+
+  /* Fine technical label used sparingly for drawing-style annotations */
+  .datum {
+    @apply font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground;
+  }
+
+  .rule {
+    @apply border-t border-border;
+  }
+
+  .precision-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .precision-gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .precision-gallery {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .gallery-tile {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid hsl(var(--border));
+    background-color: hsl(var(--secondary));
+  }
+}
+
+
+@layer utilities {
+  .animate-reveal {
+    animation: reveal 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal {
+      animation: none;
+    }
+
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
