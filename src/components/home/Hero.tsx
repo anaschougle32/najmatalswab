@@ -77,40 +77,41 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 lg:pt-28 border-b border-border">
-      <div className="shell container-padding py-6 lg:py-12">
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-          {/* LEFT COLUMN: Middle text format, Large Logo, Single-Line Typography */}
-          <div className="flex flex-col items-center text-center mx-auto w-full lg:col-span-7">
-            {/* Prominent Large Logo Emblem */}
-            <div className="relative mb-3 flex justify-center">
+    <section className="relative overflow-hidden bg-white pt-16 lg:pt-20 border-b border-border">
+      {/* Full-bleed responsive layout filling the widescreen elegantly */}
+      <div className="w-full">
+        <div className="grid lg:grid-cols-12 min-h-[calc(90vh-5rem)] lg:min-h-[680px] xl:min-h-[740px]">
+          {/* LEFT COLUMN: Middle text format, Seamless Transparent Logo, Single-Line Typography */}
+          <div className="flex flex-col items-center justify-center text-center px-6 sm:px-10 lg:px-12 xl:px-16 py-8 lg:py-12 lg:col-span-7 xl:col-span-7">
+            {/* Prominent Large Logo with 100% pure transparent background */}
+            <div className="relative mb-2 flex justify-center">
               <img
                 src={logoImage}
-                alt="Najmat Alswab Emblem"
-                className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain drop-shadow-sm transition-transform hover:scale-[1.02]"
+                alt="Najmat Alswab Logo Emblem"
+                className="h-44 sm:h-56 md:h-64 lg:h-72 xl:h-80 w-auto object-contain mix-blend-multiply transition-transform hover:scale-[1.02]"
                 loading="eager"
               />
             </div>
 
-            {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Alyamama / Lateef Google font */}
+            {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Lateef Google font */}
             <h2
-              className="w-full text-center font-alyamama text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] font-bold text-[#28236d] tracking-normal leading-normal whitespace-nowrap overflow-hidden text-ellipsis"
+              className="w-full text-center font-lateef text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[3.6rem] font-bold text-[#28236d] tracking-normal leading-[1.2] whitespace-nowrap overflow-hidden text-ellipsis"
               dir="rtl"
             >
               نجمة الصواب للخدمات الفنية ذ.م.م
             </h2>
 
             {/* English Name: ONE SINGLE LINE, Middle formatted, Poppins Bold font */}
-            <h1 className="mt-2.5 w-full text-center font-poppins text-[0.82rem] sm:text-base md:text-xl lg:text-[1.55rem] xl:text-[1.95rem] font-bold uppercase tracking-[0.03em] text-[#28236d] whitespace-nowrap overflow-hidden text-ellipsis leading-tight">
+            <h1 className="mt-1 w-full text-center font-poppins text-[0.82rem] sm:text-base md:text-xl lg:text-[1.55rem] xl:text-[1.95rem] font-bold uppercase tracking-[0.03em] text-[#28236d] whitespace-nowrap overflow-hidden text-ellipsis leading-tight">
               NAJMAT ALSWAB TECHNICAL SERVICES L.L.C
             </h1>
 
             {/* Purple Pill Subtitle: ONE SINGLE LINE, Middle formatted, Poppins SemiBold */}
-            <div className="mt-4 inline-flex items-center justify-center rounded-xs sm:rounded-sm bg-[#28236d] px-5 sm:px-7 py-2 sm:py-2.5 text-white font-poppins text-xs sm:text-sm md:text-base font-semibold tracking-wide shadow-md whitespace-nowrap">
+            <div className="mt-3.5 inline-flex items-center justify-center rounded-xs sm:rounded-sm bg-[#28236d] px-6 sm:px-8 py-2 sm:py-2.5 text-white font-poppins text-xs sm:text-sm md:text-base font-semibold tracking-wide shadow-md whitespace-nowrap">
               Steel Products Installation &amp; Maintenance
             </div>
 
-            {/* 3 Pillars: STEEL PRODUCTS | INSTALLATION | MAINTENANCE (Poppins font with Hairline Dividers) */}
+            {/* 3 Pillars: STEEL PRODUCTS | INSTALLATION | MAINTENANCE (Middle Formatted with Hairline Dividers) */}
             <div className="mt-8 w-full max-w-xl grid grid-cols-3 divide-x divide-border/80 border-t border-border/80 pt-6">
               {/* Pillar 1: Steel Products */}
               <a
@@ -187,25 +188,31 @@ export function Hero() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Steel-Structure-Production-Factory.webp with architectural cut & DUBAI • UAE badge */}
-          <div className="relative lg:col-span-5">
-            {/* Main Image Frame */}
-            <div className="relative overflow-hidden rounded-sm border border-border/80 bg-slate-900 shadow-2xl">
+          {/* RIGHT COLUMN: Full architectural media container filling the space like the slide */}
+          <div className="relative w-full h-[400px] sm:h-[480px] lg:h-full lg:col-span-5 xl:col-span-5 flex flex-col justify-end">
+            {/* The Image Container with Architectural Diagonal Angle matching Slide 1 */}
+            <div className="relative h-full w-full overflow-hidden bg-slate-900 lg:[clip-path:polygon(10%_0,100%_0,100%_100%,0%_100%)]">
               <img
                 src={factoryImage}
                 alt="Najmat Alswab Steel Structure Production Facility"
-                className="aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/5] w-full object-cover"
+                className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 loading="eager"
               />
 
-              {/* Gradient lighting overlay */}
+              {/* Dynamic lighting gradient matching the slide */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+
+              {/* Top Accent Graphic Strip matching the slide header angle */}
+              <div className="absolute top-0 right-0 z-20 flex items-center">
+                <div className="h-3 sm:h-3.5 w-28 bg-[#0284c7] -skew-x-12" />
+                <div className="h-3 sm:h-3.5 w-14 bg-[#28236d] -skew-x-12" />
+              </div>
 
               {/* Bottom Right Banner: DUBAI • UAE (Exact match to Slide 1) */}
               <a
                 href="#contact"
                 onClick={scrollTo("contact")}
-                className="absolute right-0 bottom-0 z-20 flex items-center gap-2.5 bg-[#28236d] px-6 py-3 text-white shadow-2xl transition-all hover:bg-[#1e1954] [clip-path:polygon(14%_0,100%_0,100%_100%,0%_100%)] pl-8 sm:px-8 sm:py-3.5"
+                className="absolute right-0 bottom-0 z-30 flex items-center gap-2.5 bg-[#28236d] px-6 py-3.5 text-white shadow-2xl transition-all hover:bg-[#1e1954] [clip-path:polygon(14%_0,100%_0,100%_100%,0%_100%)] pl-9 sm:px-9 sm:py-4"
                 title="Located in Dubai & Umm Al Quwain, UAE"
               >
                 <MapPin className="h-4 w-4 fill-white text-white shrink-0" />
@@ -215,7 +222,7 @@ export function Hero() {
               </a>
 
               {/* Facility Overlay Caption */}
-              <div className="absolute left-3 top-3 z-10 rounded-xs bg-black/60 backdrop-blur-xs px-2.5 py-1 text-[11px] font-mono text-white/90 border border-white/10">
+              <div className="absolute left-6 lg:left-14 top-5 z-20 rounded-xs bg-black/65 backdrop-blur-xs px-3 py-1.5 text-[11px] font-mono text-white/95 border border-white/15 shadow-sm">
                 5,700 SQFT. Production Facility · Umm Al Quwain
               </div>
             </div>
@@ -223,7 +230,7 @@ export function Hero() {
         </div>
 
         {/* Quick Credentials Strip */}
-        <div className="mt-8 border-t border-border/60 pt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
+        <div className="shell container-padding mt-6 pb-6 border-t border-border/60 pt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
           <div className="flex items-center gap-2">
             <Building2 className="h-4 w-4 text-[#0284c7]" />
             <span>Commercial Licence: <strong className="font-mono text-foreground">{company.licence}</strong></span>
