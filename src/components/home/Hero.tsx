@@ -1,7 +1,7 @@
-import { ArrowRight, ShieldCheck, Sparkles, Building2 } from "lucide-react";
+import { ArrowRight, Phone, MapPin, Building2, ShieldCheck, Wrench, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company } from "@/content/company";
-import heroImage from "@/assets/canopy-1.jpg";
+import heroSlideExact from "@/assets/hero-slide-exact.webp";
 
 export function Hero() {
   const scrollTo = (id: string) => (e: React.MouseEvent) => {
@@ -14,78 +14,105 @@ export function Hero() {
   };
 
   return (
-    <section className="border-b border-border bg-background pt-16 lg:pt-20">
-      <div className="shell grid lg:grid-cols-12 min-h-[calc(88vh-5rem)]">
-        <div className="container-padding py-12 md:py-16 lg:col-span-5 lg:py-20 flex flex-col justify-center">
-          <div className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-accent" />
-            <p className="datum text-accent">Dubai · Umm Al Quwain, UAE</p>
-          </div>
+    <section className="relative bg-white pt-16 lg:pt-20 border-b border-border">
+      {/* Hidden SEO & Screen Reader Accessibility */}
+      <h1 className="sr-only">
+        Najmat Alswab Technical Services L.L.C. | Steel Products Installation & Maintenance | Dubai, UAE
+      </h1>
 
-          <div className="mt-4">
-            <span className="font-heading text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-              نجمة الصواب للخدمات الفنية ذ.م.م
-            </span>
-            <h1 className="mt-2 font-heading text-3xl leading-[1.08] sm:text-4xl lg:text-5xl font-bold tracking-tight text-primary">
-              Architectural metalwork,
-              <br />
-              <span className="text-foreground">fabricated in the UAE.</span>
-            </h1>
-          </div>
-
-          <p className="mt-5 max-w-md text-sm sm:text-base leading-relaxed text-muted-foreground">
-            {company.legalName} delivers custom stainless and mild-steel fabrication, PVD/electroplating finishes, balustrades, facades, and high-rise chute systems from our {company.facilitySize} production workshop in Umm Al Quwain.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="shadow-xs">
-              <a href="#contact" onClick={scrollTo("contact")}>
-                Send project inquiry
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href="#capabilities" onClick={scrollTo("capabilities")}>
-                Explore Capabilities (48)
-              </a>
-            </Button>
-          </div>
-
-          {/* Quick Metrics Bar from PDF */}
-          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-border pt-6 text-left">
-            <div>
-              <dt className="datum text-[10px]">Production Facility</dt>
-              <dd className="mt-1 font-heading text-base sm:text-lg font-bold text-foreground">
-                {company.facilitySize}
-              </dd>
-            </div>
-            <div>
-              <dt className="datum text-[10px]">Flagship Chutes</dt>
-              <dd className="mt-1 font-heading text-base sm:text-lg font-bold text-accent">
-                70% Towers
-              </dd>
-            </div>
-            <div>
-              <dt className="datum text-[10px]">Commercial Licence</dt>
-              <dd className="mt-1 font-mono text-base sm:text-lg font-bold text-foreground">
-                {company.licence}
-              </dd>
-            </div>
-          </dl>
-        </div>
-
-        <figure className="relative lg:col-span-7 bg-muted min-h-[300px] lg:min-h-full">
+      {/* Main Exact Hero Slide Presentation */}
+      <div className="shell container-padding py-4 md:py-6">
+        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-sm border border-border/60 bg-white shadow-lg">
+          {/* Exact Slide Image */}
           <img
-            src={heroImage}
-            alt="Steel and glass architectural canopy structure engineered and installed by Najmat Alswab"
-            className="h-full w-full object-cover"
+            src={heroSlideExact}
+            alt="Najmat Alswab Technical Services L.L.C - Steel Products Installation & Maintenance Dubai UAE"
+            className="h-full w-full object-contain md:object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
-          <figcaption className="datum absolute bottom-3 left-3 bg-background/90 backdrop-blur-xs px-3 py-1.5 rounded-xs border border-border/50 text-[11px]">
-            Metal-glass entrance canopy — UAE Architectural Reference
-          </figcaption>
-        </figure>
+
+          {/* Interactive Clickable Hotspots over the 3 Service Pillars */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Left pillar: Steel Products */}
+            <a
+              href="#capabilities"
+              onClick={scrollTo("capabilities")}
+              className="pointer-events-auto absolute left-[5%] bottom-[5%] w-[12%] h-[16%] cursor-pointer rounded-xs transition-colors hover:bg-accent/10 focus:outline-hidden"
+              title="Explore Steel Products & Capabilities"
+              aria-label="Explore Steel Products"
+            />
+
+            {/* Middle pillar: Installation */}
+            <a
+              href="#capabilities"
+              onClick={scrollTo("capabilities")}
+              className="pointer-events-auto absolute left-[18%] bottom-[5%] w-[12%] h-[16%] cursor-pointer rounded-xs transition-colors hover:bg-accent/10 focus:outline-hidden"
+              title="Explore Installation Services"
+              aria-label="Explore Installation"
+            />
+
+            {/* Right pillar: Maintenance */}
+            <a
+              href="#about"
+              onClick={scrollTo("about")}
+              className="pointer-events-auto absolute left-[31%] bottom-[5%] w-[12%] h-[16%] cursor-pointer rounded-xs transition-colors hover:bg-accent/10 focus:outline-hidden"
+              title="Explore Technical Maintenance Scope"
+              aria-label="Explore Maintenance"
+            />
+
+            {/* Bottom-right corner: Dubai UAE */}
+            <a
+              href="#contact"
+              onClick={scrollTo("contact")}
+              className="pointer-events-auto absolute right-0 bottom-0 w-[25%] h-[14%] cursor-pointer transition-colors hover:bg-white/10 focus:outline-hidden"
+              title="Contact our Dubai, UAE office"
+              aria-label="Contact Dubai Office"
+            />
+          </div>
+        </div>
+
+        {/* Floating Quick Action & Procurement Strip */}
+        <div className="mt-4 rounded-sm border border-border bg-background p-4 shadow-xs md:p-5">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs">
+              <div className="flex items-center gap-1.5 font-medium text-foreground">
+                <Building2 className="h-4 w-4 text-accent" />
+                <span>Production Facility: <strong className="font-bold">{company.facilitySize}</strong> in Umm Al Quwain</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-muted-foreground">
+                <ShieldCheck className="h-4 w-4 text-accent" />
+                <span>Licence No: <strong className="font-mono text-foreground">{company.licence}</strong></span>
+              </div>
+              <div className="flex items-center gap-1.5 text-muted-foreground">
+                <MapPin className="h-4 w-4 text-accent" />
+                <span>Head Office: <strong className="text-foreground">{company.office}</strong></span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={company.phoneHref}
+                className="flex items-center gap-1.5 font-mono text-xs font-semibold text-primary hover:text-accent transition-colors px-3 py-2 rounded-xs border border-border bg-secondary/50"
+              >
+                <Phone className="h-3.5 w-3.5 text-accent" />
+                <span>{company.phone}</span>
+              </a>
+
+              <Button asChild size="sm" className="shadow-xs">
+                <a href="#contact" onClick={scrollTo("contact")}>
+                  Send Project Inquiry
+                  <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                </a>
+              </Button>
+
+              <Button asChild size="sm" variant="outline">
+                <a href="#capabilities" onClick={scrollTo("capabilities")}>
+                  View Capabilities (48)
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
