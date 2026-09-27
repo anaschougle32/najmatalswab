@@ -14,12 +14,12 @@ export default {
     },
     extend: {
       fontFamily: {
+        alyamama: ["Alyamama", "Lateef", "sans-serif"],
+        lateef: ["Lateef", "Alyamama", "sans-serif"],
+        arabic: ["Alyamama", "Lateef", "system-ui", "sans-serif"],
         poppins: ["Poppins", "system-ui", "sans-serif"],
-        tajawal: ["Tajawal", "Almarai", "system-ui", "sans-serif"],
-        almarai: ["Almarai", "Tajawal", "system-ui", "sans-serif"],
         heading: ["Poppins", "system-ui", "sans-serif"],
         display: ["Poppins", "system-ui", "sans-serif"],
-        arabic: ["Tajawal", "Almarai", "system-ui", "sans-serif"],
         body: ["DM Sans", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },

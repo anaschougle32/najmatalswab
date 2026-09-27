@@ -77,11 +77,8 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white pt-16 lg:pt-20 border-b border-border">
-      {/* Top Accent Strip */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-[#0284c7] via-[#28236d] to-[#0284c7]" />
-
-      <div className="shell container-padding py-8 lg:py-14">
+    <section className="relative overflow-hidden bg-white pt-20 lg:pt-28 border-b border-border">
+      <div className="shell container-padding py-6 lg:py-12">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
           {/* LEFT COLUMN: Middle text format, Large Logo, Single-Line Typography */}
           <div className="flex flex-col items-center text-center mx-auto w-full lg:col-span-7">
@@ -95,9 +92,9 @@ export function Hero() {
               />
             </div>
 
-            {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Tajawal font */}
+            {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Alyamama / Lateef Google font */}
             <h2
-              className="w-full text-center font-tajawal text-xl sm:text-2xl md:text-3xl lg:text-[2.1rem] xl:text-[2.35rem] font-bold text-[#28236d] tracking-tight whitespace-nowrap overflow-hidden text-ellipsis"
+              className="w-full text-center font-alyamama text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] font-bold text-[#28236d] tracking-normal leading-normal whitespace-nowrap overflow-hidden text-ellipsis"
               dir="rtl"
             >
               نجمة الصواب للخدمات الفنية ذ.م.م
@@ -192,12 +189,6 @@ export function Hero() {
 
           {/* RIGHT COLUMN: Steel-Structure-Production-Factory.webp with architectural cut & DUBAI • UAE badge */}
           <div className="relative lg:col-span-5">
-            {/* Top decorative diagonal accent lines matching the slide */}
-            <div className="absolute -top-4 right-4 z-10 hidden sm:flex items-center gap-1.5">
-              <div className="h-2 w-16 bg-[#0284c7] -skew-x-12 rounded-xs" />
-              <div className="h-2 w-8 bg-[#28236d] -skew-x-12 rounded-xs" />
-            </div>
-
             {/* Main Image Frame */}
             <div className="relative overflow-hidden rounded-sm border border-border/80 bg-slate-900 shadow-2xl">
               <img
