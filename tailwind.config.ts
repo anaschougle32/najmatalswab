@@ -15,6 +15,8 @@ export default {
     extend: {
       fontFamily: {
         heading: ["Satoshi", "system-ui", "sans-serif"],
+        display: ["Plus Jakarta Sans", "Satoshi", "system-ui", "sans-serif"],
+        arabic: ["Cairo", "system-ui", "sans-serif"],
         body: ["DM Sans", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },

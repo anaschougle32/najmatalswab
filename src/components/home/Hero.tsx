@@ -17,7 +17,6 @@ function IBeamIcon({ className }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      {/* 3D I-Beam girder matching reference slide */}
       <path d="M12 16 L38 8 L52 13 L26 22 Z" />
       <path d="M12 16 L12 21 L26 27 L26 22 Z" />
       <path d="M26 22 L26 42 L32 40 L32 20 Z" />
@@ -41,7 +40,6 @@ function InstallationIcon({ className }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      {/* Gear with internal checkmark matching reference slide */}
       <circle cx="32" cy="32" r="15" strokeDasharray="3 3" />
       <path d="M32 9v5M32 50v5M9 32h5M50 32h5M15.5 15.5l3.8 3.8M44.7 44.7l3.8 3.8M15.5 48.5l3.8-3.8M44.7 19.3l3.8-3.8" />
       <path d="M24 33l6 6 12-12" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -61,7 +59,6 @@ function MaintenanceIcon({ className }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      {/* Precision gear with central hub matching reference slide */}
       <circle cx="32" cy="32" r="14" />
       <path d="M32 10v5M32 49v5M10 32h5M49 32h5M16.5 16.5l3.8 3.8M43.7 43.7l3.8 3.8M16.5 47.5l3.8-3.8M43.7 20.3l3.8-3.8" />
       <circle cx="32" cy="32" r="6" strokeWidth="2.5" />
@@ -82,41 +79,41 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-white pt-16 lg:pt-20 border-b border-border">
       {/* Top Accent Strip */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-[#0284c7] via-[#2b227c] to-[#0284c7]" />
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#0284c7] via-[#28236d] to-[#0284c7]" />
 
-      <div className="shell container-padding py-8 lg:py-12">
+      <div className="shell container-padding py-8 lg:py-14">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-          {/* LEFT COLUMN: Exactly matching the cover slide's typography, logo, and pillars */}
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-7">
-            {/* Logo Emblem: Stars + Calligraphy */}
-            <div className="relative mb-2">
+          {/* LEFT COLUMN: Middle text format, Large Logo, Single-Line Typography */}
+          <div className="flex flex-col items-center text-center mx-auto w-full lg:col-span-7">
+            {/* Prominent Large Logo Emblem */}
+            <div className="relative mb-3 flex justify-center">
               <img
                 src={logoImage}
                 alt="Najmat Alswab Emblem"
-                className="h-28 sm:h-36 md:h-44 w-auto object-contain drop-shadow-xs"
+                className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain drop-shadow-sm transition-transform hover:scale-[1.02]"
                 loading="eager"
               />
             </div>
 
-            {/* Arabic Typography */}
+            {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Cairo font */}
             <h2
-              className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-[#2a2278] tracking-wide"
+              className="w-full text-center font-arabic text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.25rem] font-bold text-[#28236d] tracking-tight whitespace-nowrap overflow-hidden text-ellipsis"
               dir="rtl"
             >
               نجمة الصواب للخدمات الفنية ذ.م.م
             </h2>
 
-            {/* English Typography */}
-            <h1 className="mt-2 font-heading text-xl sm:text-2xl md:text-3xl lg:text-[2rem] font-black uppercase tracking-wider text-[#2a2278] leading-tight">
+            {/* English Name: ONE SINGLE LINE, Middle formatted, Plus Jakarta Sans font */}
+            <h1 className="mt-2 w-full text-center font-display text-[0.82rem] sm:text-base md:text-xl lg:text-[1.55rem] xl:text-[1.95rem] font-black uppercase tracking-[0.04em] text-[#28236d] whitespace-nowrap overflow-hidden text-ellipsis leading-tight">
               NAJMAT ALSWAB TECHNICAL SERVICES L.L.C
             </h1>
 
-            {/* Purple Pill Subtitle */}
-            <div className="mt-3.5 inline-block rounded-xs md:rounded-sm bg-[#2b227c] px-5 py-2 text-white font-heading text-sm sm:text-base md:text-lg font-bold tracking-wide shadow-md">
+            {/* Purple Pill Subtitle: ONE SINGLE LINE, Middle formatted */}
+            <div className="mt-3.5 inline-flex items-center justify-center rounded-xs sm:rounded-sm bg-[#28236d] px-5 sm:px-7 py-2 sm:py-2.5 text-white font-display text-xs sm:text-sm md:text-base font-bold tracking-wider shadow-md whitespace-nowrap">
               Steel Products Installation &amp; Maintenance
             </div>
 
-            {/* 3 Pillars matching Slide: STEEL PRODUCTS | INSTALLATION | MAINTENANCE */}
+            {/* 3 Pillars: STEEL PRODUCTS | INSTALLATION | MAINTENANCE (Middle Formatted with Hairline Dividers) */}
             <div className="mt-8 w-full max-w-xl grid grid-cols-3 divide-x divide-border/80 border-t border-border/80 pt-6">
               {/* Pillar 1: Steel Products */}
               <a
@@ -127,7 +124,7 @@ export function Hero() {
                 <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-cyan-50/80 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
                   <IBeamIcon className="h-8 w-8 sm:h-9 sm:w-9" />
                 </div>
-                <span className="mt-3 font-heading text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#2a2278] group-hover:text-primary transition-colors">
+                <span className="mt-3 font-display text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#28236d] group-hover:text-primary transition-colors whitespace-nowrap">
                   STEEL PRODUCTS
                 </span>
               </a>
@@ -141,7 +138,7 @@ export function Hero() {
                 <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-cyan-50/80 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
                   <InstallationIcon className="h-8 w-8 sm:h-9 sm:w-9" />
                 </div>
-                <span className="mt-3 font-heading text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#2a2278] group-hover:text-primary transition-colors">
+                <span className="mt-3 font-display text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#28236d] group-hover:text-primary transition-colors whitespace-nowrap">
                   INSTALLATION
                 </span>
               </a>
@@ -155,18 +152,18 @@ export function Hero() {
                 <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-cyan-50/80 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
                   <MaintenanceIcon className="h-8 w-8 sm:h-9 sm:w-9" />
                 </div>
-                <span className="mt-3 font-heading text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#2a2278] group-hover:text-primary transition-colors">
+                <span className="mt-3 font-display text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#28236d] group-hover:text-primary transition-colors whitespace-nowrap">
                   MAINTENANCE
                 </span>
               </a>
             </div>
 
-            {/* Interactive Quick Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 w-full">
+            {/* Interactive Quick Action Buttons (Middle Formatted) */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 w-full">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#2b227c] hover:bg-[#201964] text-white shadow-md font-heading font-semibold"
+                className="bg-[#28236d] hover:bg-[#1e1954] text-white shadow-md font-display font-bold text-sm"
               >
                 <a href="#contact" onClick={scrollTo("contact")}>
                   Send Project Inquiry
@@ -177,7 +174,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-[#2b227c] text-[#2b227c] hover:bg-[#2b227c]/10 font-heading font-semibold"
+                className="border-[#28236d] text-[#28236d] hover:bg-[#28236d]/10 font-display font-bold text-sm"
               >
                 <a href="#capabilities" onClick={scrollTo("capabilities")}>
                   View Capabilities (48)
@@ -185,7 +182,7 @@ export function Hero() {
               </Button>
               <a
                 href={company.phoneHref}
-                className="flex items-center gap-1.5 font-mono text-xs font-semibold text-muted-foreground hover:text-[#2b227c] px-3 py-2"
+                className="flex items-center gap-1.5 font-mono text-xs font-semibold text-muted-foreground hover:text-[#28236d] px-3 py-2"
               >
                 <Phone className="h-3.5 w-3.5 text-[#0284c7]" />
                 <span>{company.phone}</span>
@@ -193,12 +190,12 @@ export function Hero() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Using Steel-Structure-Production-Factory.webp with architectural cut & DUBAI • UAE badge */}
+          {/* RIGHT COLUMN: Steel-Structure-Production-Factory.webp with architectural cut & DUBAI • UAE badge */}
           <div className="relative lg:col-span-5">
             {/* Top decorative diagonal accent lines matching the slide */}
             <div className="absolute -top-4 right-4 z-10 hidden sm:flex items-center gap-1.5">
               <div className="h-2 w-16 bg-[#0284c7] -skew-x-12 rounded-xs" />
-              <div className="h-2 w-8 bg-[#2b227c] -skew-x-12 rounded-xs" />
+              <div className="h-2 w-8 bg-[#28236d] -skew-x-12 rounded-xs" />
             </div>
 
             {/* Main Image Frame */}
@@ -217,11 +214,11 @@ export function Hero() {
               <a
                 href="#contact"
                 onClick={scrollTo("contact")}
-                className="absolute right-0 bottom-0 z-20 flex items-center gap-2.5 bg-[#2b227c] px-6 py-3 text-white shadow-2xl transition-all hover:bg-[#201964] [clip-path:polygon(14%_0,100%_0,100%_100%,0%_100%)] pl-8 sm:px-8 sm:py-3.5"
+                className="absolute right-0 bottom-0 z-20 flex items-center gap-2.5 bg-[#28236d] px-6 py-3 text-white shadow-2xl transition-all hover:bg-[#1e1954] [clip-path:polygon(14%_0,100%_0,100%_100%,0%_100%)] pl-8 sm:px-8 sm:py-3.5"
                 title="Located in Dubai & Umm Al Quwain, UAE"
               >
                 <MapPin className="h-4 w-4 fill-white text-white shrink-0" />
-                <span className="font-heading text-xs sm:text-sm font-bold uppercase tracking-widest">
+                <span className="font-display text-xs sm:text-sm font-bold uppercase tracking-widest">
                   DUBAI &nbsp;•&nbsp; UAE
                 </span>
               </a>
