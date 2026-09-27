@@ -95,25 +95,25 @@ export function Hero() {
               />
             </div>
 
-            {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Cairo font */}
+            {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Tajawal font */}
             <h2
-              className="w-full text-center font-arabic text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.25rem] font-bold text-[#28236d] tracking-tight whitespace-nowrap overflow-hidden text-ellipsis"
+              className="w-full text-center font-tajawal text-xl sm:text-2xl md:text-3xl lg:text-[2.1rem] xl:text-[2.35rem] font-bold text-[#28236d] tracking-tight whitespace-nowrap overflow-hidden text-ellipsis"
               dir="rtl"
             >
               نجمة الصواب للخدمات الفنية ذ.م.م
             </h2>
 
-            {/* English Name: ONE SINGLE LINE, Middle formatted, Plus Jakarta Sans font */}
-            <h1 className="mt-2 w-full text-center font-display text-[0.82rem] sm:text-base md:text-xl lg:text-[1.55rem] xl:text-[1.95rem] font-black uppercase tracking-[0.04em] text-[#28236d] whitespace-nowrap overflow-hidden text-ellipsis leading-tight">
+            {/* English Name: ONE SINGLE LINE, Middle formatted, Poppins Bold font */}
+            <h1 className="mt-2.5 w-full text-center font-poppins text-[0.82rem] sm:text-base md:text-xl lg:text-[1.55rem] xl:text-[1.95rem] font-bold uppercase tracking-[0.03em] text-[#28236d] whitespace-nowrap overflow-hidden text-ellipsis leading-tight">
               NAJMAT ALSWAB TECHNICAL SERVICES L.L.C
             </h1>
 
-            {/* Purple Pill Subtitle: ONE SINGLE LINE, Middle formatted */}
-            <div className="mt-3.5 inline-flex items-center justify-center rounded-xs sm:rounded-sm bg-[#28236d] px-5 sm:px-7 py-2 sm:py-2.5 text-white font-display text-xs sm:text-sm md:text-base font-bold tracking-wider shadow-md whitespace-nowrap">
+            {/* Purple Pill Subtitle: ONE SINGLE LINE, Middle formatted, Poppins SemiBold */}
+            <div className="mt-4 inline-flex items-center justify-center rounded-xs sm:rounded-sm bg-[#28236d] px-5 sm:px-7 py-2 sm:py-2.5 text-white font-poppins text-xs sm:text-sm md:text-base font-semibold tracking-wide shadow-md whitespace-nowrap">
               Steel Products Installation &amp; Maintenance
             </div>
 
-            {/* 3 Pillars: STEEL PRODUCTS | INSTALLATION | MAINTENANCE (Middle Formatted with Hairline Dividers) */}
+            {/* 3 Pillars: STEEL PRODUCTS | INSTALLATION | MAINTENANCE (Poppins font with Hairline Dividers) */}
             <div className="mt-8 w-full max-w-xl grid grid-cols-3 divide-x divide-border/80 border-t border-border/80 pt-6">
               {/* Pillar 1: Steel Products */}
               <a
@@ -124,7 +124,7 @@ export function Hero() {
                 <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-cyan-50/80 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
                   <IBeamIcon className="h-8 w-8 sm:h-9 sm:w-9" />
                 </div>
-                <span className="mt-3 font-display text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#28236d] group-hover:text-primary transition-colors whitespace-nowrap">
+                <span className="mt-3 font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#4d4d4d] group-hover:text-[#28236d] transition-colors whitespace-nowrap">
                   STEEL PRODUCTS
                 </span>
               </a>
@@ -138,7 +138,7 @@ export function Hero() {
                 <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-cyan-50/80 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
                   <InstallationIcon className="h-8 w-8 sm:h-9 sm:w-9" />
                 </div>
-                <span className="mt-3 font-display text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#28236d] group-hover:text-primary transition-colors whitespace-nowrap">
+                <span className="mt-3 font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#4d4d4d] group-hover:text-[#28236d] transition-colors whitespace-nowrap">
                   INSTALLATION
                 </span>
               </a>
@@ -152,18 +152,18 @@ export function Hero() {
                 <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-cyan-50/80 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
                   <MaintenanceIcon className="h-8 w-8 sm:h-9 sm:w-9" />
                 </div>
-                <span className="mt-3 font-display text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#28236d] group-hover:text-primary transition-colors whitespace-nowrap">
+                <span className="mt-3 font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#4d4d4d] group-hover:text-[#28236d] transition-colors whitespace-nowrap">
                   MAINTENANCE
                 </span>
               </a>
             </div>
 
-            {/* Interactive Quick Action Buttons (Middle Formatted) */}
+            {/* Interactive Quick Action Buttons */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 w-full">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#28236d] hover:bg-[#1e1954] text-white shadow-md font-display font-bold text-sm"
+                className="bg-[#28236d] hover:bg-[#1e1954] text-white shadow-md font-poppins font-semibold text-sm"
               >
                 <a href="#contact" onClick={scrollTo("contact")}>
                   Send Project Inquiry
@@ -174,7 +174,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-[#28236d] text-[#28236d] hover:bg-[#28236d]/10 font-display font-bold text-sm"
+                className="border-[#28236d] text-[#28236d] hover:bg-[#28236d]/10 font-poppins font-semibold text-sm"
               >
                 <a href="#capabilities" onClick={scrollTo("capabilities")}>
                   View Capabilities (48)
@@ -218,7 +218,7 @@ export function Hero() {
                 title="Located in Dubai & Umm Al Quwain, UAE"
               >
                 <MapPin className="h-4 w-4 fill-white text-white shrink-0" />
-                <span className="font-display text-xs sm:text-sm font-bold uppercase tracking-widest">
+                <span className="font-poppins text-xs sm:text-sm font-bold uppercase tracking-widest">
                   DUBAI &nbsp;•&nbsp; UAE
                 </span>
               </a>

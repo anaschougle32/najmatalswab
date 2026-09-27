@@ -14,9 +14,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Satoshi", "system-ui", "sans-serif"],
-        display: ["Plus Jakarta Sans", "Satoshi", "system-ui", "sans-serif"],
-        arabic: ["Cairo", "system-ui", "sans-serif"],
+        poppins: ["Poppins", "system-ui", "sans-serif"],
+        tajawal: ["Tajawal", "Almarai", "system-ui", "sans-serif"],
+        almarai: ["Almarai", "Tajawal", "system-ui", "sans-serif"],
+        heading: ["Poppins", "system-ui", "sans-serif"],
+        display: ["Poppins", "system-ui", "sans-serif"],
+        arabic: ["Tajawal", "Almarai", "system-ui", "sans-serif"],
         body: ["DM Sans", "system-ui", "sans-serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },
