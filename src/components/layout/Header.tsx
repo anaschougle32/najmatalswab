@@ -61,15 +61,9 @@ export function Header() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMenuOpen
-          ? "bg-white/95 backdrop-blur-md border-b border-border shadow-xs"
-          : "bg-white/90 lg:bg-transparent border-b border-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b border-slate-200/90 shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-all">
       <div className="shell container-padding">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-[72px]">
           {/* Logo & Brand Identity */}
           <a
             href="#"
@@ -83,13 +77,13 @@ export function Header() {
             <img
               src={logo}
               alt="Najmat Alswab Technical Services logo"
-              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-poppins text-sm sm:text-base font-bold tracking-tight text-[#28236d]">
+              <span className="font-poppins text-sm sm:text-base font-bold tracking-tight text-[#1e2547]">
                 NAJMAT ALSWAB
               </span>
-              <span className="font-poppins text-[10px] text-muted-foreground font-medium">
+              <span className="font-poppins text-[10px] text-slate-500 font-medium">
                 Technical Services L.L.C.
               </span>
             </span>
@@ -107,9 +101,7 @@ export function Header() {
                   className={`text-xs xl:text-sm font-poppins font-medium tracking-wide transition-colors py-1 border-b-2 ${
                     isActive
                       ? "text-[#0284c7] border-[#0284c7] font-semibold"
-                      : isScrolled
-                      ? "text-foreground/80 border-transparent hover:text-[#0284c7] hover:border-[#0284c7]/40"
-                      : "text-[#28236d] border-transparent hover:text-[#0284c7] hover:border-[#0284c7]/40"
+                      : "text-slate-600 border-transparent hover:text-[#0284c7] hover:border-[#0284c7]/40"
                   }`}
                 >
                   {link.name}
@@ -122,11 +114,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={company.phoneHref}
-              className={`flex items-center gap-1.5 font-mono text-xs font-semibold transition-all px-3.5 py-1.5 rounded-full ${
-                isScrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "bg-white/80 backdrop-blur-xs text-[#28236d] hover:bg-white shadow-xs border border-white/60"
-              }`}
+              className="flex items-center gap-1.5 font-mono text-xs font-semibold text-slate-600 hover:text-[#1e2547] transition-colors px-2 py-1"
             >
               <Phone className="h-3.5 w-3.5 text-[#0284c7]" />
               <span>{company.phone}</span>
@@ -134,7 +122,7 @@ export function Header() {
             <Button
               asChild
               size="sm"
-              className="bg-[#28236d] hover:bg-[#1e1954] text-white shadow-md font-poppins font-semibold"
+              className="bg-[#1e2547] hover:bg-[#151a33] text-white shadow-xs font-poppins font-semibold text-xs rounded-xs px-4"
             >
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                 Project Inquiry

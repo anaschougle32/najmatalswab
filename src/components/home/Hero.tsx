@@ -77,91 +77,61 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white border-b border-border">
+    <section className="relative overflow-hidden bg-white border-b border-slate-200/80">
       <div className="w-full">
-        <div className="grid lg:grid-cols-12 min-h-screen lg:min-h-[720px] xl:min-h-[820px] w-full">
-          {/* LEFT COLUMN: Middle text format, Large Logo, Single-Line Typography */}
-          <div className="flex flex-col justify-between items-center text-center px-6 sm:px-10 lg:px-12 xl:px-16 pt-24 lg:pt-28 pb-8 lg:pb-10 lg:col-span-7 xl:col-span-7 z-10">
-            <div className="my-auto flex flex-col items-center text-center w-full max-w-2xl">
-              {/* Prominent Logo Emblem (100% Pure Transparent Alpha) */}
-              <div className="relative mb-2 flex justify-center">
+        <div className="grid lg:grid-cols-2 lg:h-[calc(100vh-72px)] lg:min-h-[640px] lg:max-h-[820px] w-full">
+          {/* LEFT SIDE: Approximately 50% of viewport, generous controlled whitespace */}
+          <div className="flex flex-col justify-between h-full px-6 sm:px-10 lg:px-12 xl:px-16 py-8 lg:py-10 max-w-2xl mx-auto lg:mx-0 w-full z-10">
+            {/* TOP: Eyebrow + Small Horizontal Company Identity Lockup */}
+            <div className="space-y-3">
+              {/* Small uppercase eyebrow */}
+              <div className="flex items-center gap-2">
+                <span className="font-poppins text-[11px] sm:text-xs font-semibold tracking-wider text-[#0284c7] uppercase">
+                  STEEL PRODUCTS · INSTALLATION · MAINTENANCE
+                </span>
+              </div>
+
+              {/* Existing Najmat Alswab identity in a SMALL horizontal lockup */}
+              <div className="flex items-center gap-3 pt-0.5">
                 <img
                   src={logoImage}
                   alt="Najmat Alswab Emblem"
-                  className="h-36 sm:h-44 md:h-52 lg:h-60 xl:h-64 w-auto object-contain transition-transform hover:scale-[1.02]"
+                  className="h-9 sm:h-10 w-auto object-contain shrink-0"
                   loading="eager"
                 />
+                <div className="flex flex-col leading-tight border-l border-slate-200 pl-3">
+                  <span className="font-poppins text-xs sm:text-sm font-bold tracking-tight text-[#1e2547]">
+                    NAJMAT ALSWAB TECHNICAL SERVICES L.L.C.
+                  </span>
+                  <span
+                    className="font-lateef text-base sm:text-lg leading-none font-semibold text-slate-500"
+                    dir="rtl"
+                  >
+                    نجمة الصواب للخدمات الفنية ذ.م.م
+                  </span>
+                </div>
               </div>
+            </div>
 
-              {/* Arabic Name: ONE SINGLE LINE, Middle formatted, Lateef Google font */}
-              <h2
-                className="w-full text-center font-lateef text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold text-[#28236d] tracking-normal leading-[1.25] whitespace-nowrap overflow-hidden text-ellipsis"
-                dir="rtl"
-              >
-                نجمة الصواب للخدمات الفنية ذ.م.م
-              </h2>
-
-              {/* English Name: ONE SINGLE LINE, Middle formatted, Poppins Bold font */}
-              <h1 className="mt-1 w-full text-center font-poppins text-xs sm:text-base md:text-lg lg:text-[1.45rem] xl:text-[1.8rem] font-bold uppercase tracking-[0.03em] text-[#28236d] whitespace-nowrap overflow-hidden text-ellipsis leading-tight">
-                NAJMAT ALSWAB TECHNICAL SERVICES L.L.C
+            {/* MIDDLE: Primary Visual Focus - Dominant Headline, Paragraph, CTAs & Service Row */}
+            <div className="my-auto py-5 lg:py-6 space-y-5">
+              {/* Main headline: Maximum 2 lines, large, strong modern sans-serif, dark navy */}
+              <h1 className="font-poppins text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-[3.15rem] font-bold text-[#1e2547] leading-[1.14] tracking-tight">
+                Steel Products<br />
+                Installation &amp; Maintenance
               </h1>
 
-              {/* Purple Pill Subtitle: ONE SINGLE LINE, Middle formatted */}
-              <div className="mt-3.5 inline-flex items-center justify-center rounded-xs sm:rounded-sm bg-[#28236d] px-6 sm:px-8 py-1.5 sm:py-2 text-white font-poppins text-xs sm:text-sm md:text-base font-semibold tracking-wide shadow-md whitespace-nowrap">
-                Steel Products Installation &amp; Maintenance
-              </div>
+              {/* Concise supporting paragraph */}
+              <p className="font-poppins text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg">
+                Reliable steel solutions for industrial, commercial and infrastructure projects across the UAE.
+              </p>
 
-              {/* 3 Pillars: STEEL PRODUCTS | INSTALLATION | MAINTENANCE (Middle Formatted with Hairline Dividers) */}
-              <div className="mt-6 w-full max-w-lg grid grid-cols-3 divide-x divide-border/80 border-t border-border/80 pt-5">
-                {/* Pillar 1: Steel Products */}
-                <a
-                  href="#capabilities"
-                  onClick={scrollTo("capabilities")}
-                  className="group flex flex-col items-center px-2 sm:px-3 text-center cursor-pointer transition-transform hover:-translate-y-0.5"
-                >
-                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-cyan-50/90 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
-                    <IBeamIcon className="h-7 w-7 sm:h-8 sm:w-8" />
-                  </div>
-                  <span className="mt-2.5 font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#4d4d4d] group-hover:text-[#28236d] transition-colors whitespace-nowrap">
-                    STEEL PRODUCTS
-                  </span>
-                </a>
-
-                {/* Pillar 2: Installation */}
-                <a
-                  href="#capabilities"
-                  onClick={scrollTo("capabilities")}
-                  className="group flex flex-col items-center px-2 sm:px-3 text-center cursor-pointer transition-transform hover:-translate-y-0.5"
-                >
-                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-cyan-50/90 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
-                    <InstallationIcon className="h-7 w-7 sm:h-8 sm:w-8" />
-                  </div>
-                  <span className="mt-2.5 font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#4d4d4d] group-hover:text-[#28236d] transition-colors whitespace-nowrap">
-                    INSTALLATION
-                  </span>
-                </a>
-
-                {/* Pillar 3: Maintenance */}
-                <a
-                  href="#about"
-                  onClick={scrollTo("about")}
-                  className="group flex flex-col items-center px-2 sm:px-3 text-center cursor-pointer transition-transform hover:-translate-y-0.5"
-                >
-                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-cyan-50/90 text-[#0284c7] transition-colors group-hover:bg-[#0284c7] group-hover:text-white">
-                    <MaintenanceIcon className="h-7 w-7 sm:h-8 sm:w-8" />
-                  </div>
-                  <span className="mt-2.5 font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#4d4d4d] group-hover:text-[#28236d] transition-colors whitespace-nowrap">
-                    MAINTENANCE
-                  </span>
-                </a>
-              </div>
-
-              {/* Interactive Quick Action Buttons */}
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 w-full">
+              {/* Primary & Secondary CTAs with Phone */}
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-[#28236d] hover:bg-[#1e1954] text-white shadow-md font-poppins font-semibold text-sm"
+                  className="bg-[#1e2547] hover:bg-[#151a33] text-white font-poppins font-semibold text-sm px-6 h-11 rounded-xs shadow-xs"
                 >
                   <a href="#contact" onClick={scrollTo("contact")}>
                     Send Project Inquiry
@@ -172,7 +142,7 @@ export function Hero() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-[#28236d] text-[#28236d] hover:bg-[#28236d]/10 font-poppins font-semibold text-sm"
+                  className="border-slate-300 text-[#1e2547] hover:bg-slate-50 font-poppins font-semibold text-sm px-5 h-11 rounded-xs"
                 >
                   <a href="#capabilities" onClick={scrollTo("capabilities")}>
                     View Capabilities (48)
@@ -180,67 +150,115 @@ export function Hero() {
                 </Button>
                 <a
                   href={company.phoneHref}
-                  className="flex items-center gap-1.5 font-mono text-xs font-semibold text-muted-foreground hover:text-[#28236d] px-3 py-2"
+                  className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#0284c7] transition-colors py-2 px-2"
                 >
-                  <Phone className="h-3.5 w-3.5 text-[#0284c7]" />
+                  <Phone className="h-4 w-4 text-[#0284c7]" />
                   <span>{company.phone}</span>
                 </a>
               </div>
+
+              {/* Clean horizontal 3-item service highlights row */}
+              <div className="pt-2">
+                <div className="grid grid-cols-3 divide-x divide-slate-200 border-y border-slate-200/90 py-3">
+                  <div className="flex items-center gap-2.5 px-1.5 sm:px-3">
+                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-[#0284c7]">
+                      <IBeamIcon className="h-4 w-4" />
+                    </div>
+                    <span className="font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-800 whitespace-nowrap">
+                      Steel Products
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2.5 px-1.5 sm:px-3">
+                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-[#0284c7]">
+                      <InstallationIcon className="h-4 w-4" />
+                    </div>
+                    <span className="font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-800 whitespace-nowrap">
+                      Installation
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2.5 px-1.5 sm:px-3">
+                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-[#0284c7]">
+                      <MaintenanceIcon className="h-4 w-4" />
+                    </div>
+                    <span className="font-poppins text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-800 whitespace-nowrap">
+                      Maintenance
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile-only factory image in exact responsive order (between Services and Company Info) */}
+              <div className="lg:hidden w-full aspect-[16/10] sm:aspect-[16/9] rounded-xs overflow-hidden relative shadow-sm border border-slate-200 my-4">
+                <img
+                  src={factoryImage}
+                  alt="Najmat Alswab Steel Production Facility"
+                  className="h-full w-full object-cover object-center"
+                  loading="eager"
+                />
+                <div className="absolute left-3 top-3 z-10 rounded-xs bg-slate-950/70 backdrop-blur-xs px-2.5 py-1 text-[10px] font-mono text-white/90 border border-white/10">
+                  5,700 SQFT. Facility · Umm Al Quwain
+                </div>
+                <div className="absolute right-0 bottom-0 z-10 flex items-center gap-1.5 bg-[#1e2547] px-4 py-2 text-white shadow-md text-xs font-bold tracking-widest [clip-path:polygon(12%_0,100%_0,100%_100%,0%_100%)] pl-6">
+                  <MapPin className="h-3.5 w-3.5 text-[#0284c7]" />
+                  <span>DUBAI · UAE</span>
+                </div>
+              </div>
             </div>
 
-            {/* Quick Credentials Strip */}
-            <div className="mt-6 w-full border-t border-border/60 pt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Building2 className="h-4 w-4 text-[#0284c7]" />
-                <span>Licence: <strong className="font-mono text-foreground">{company.licence}</strong></span>
+            {/* BOTTOM: Subtle Horizontal Company Information Bar */}
+            <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-xs text-slate-500 font-poppins">
+              <div className="flex items-center gap-1.5">
+                <Building2 className="h-3.5 w-3.5 text-slate-400" />
+                <span>Licence: <strong className="font-mono text-slate-700 font-medium">{company.licence}</strong></span>
               </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-[#0284c7]" />
-                <span>DCCI: <strong className="font-mono text-foreground">{company.chamber}</strong></span>
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-slate-400" />
+                <span>DCCI: <strong className="font-mono text-slate-700 font-medium">{company.chamber}</strong></span>
               </div>
-              <div className="flex items-center gap-2">
-                <span>Facility: <strong className="text-foreground">{company.facilitySize}</strong></span>
+              <div className="flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0284c7]" />
+                <span>Facility: <strong className="text-slate-700 font-medium">{company.facilitySize}</strong></span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Full architectural media container filling the space from top (0px) to bottom */}
-          <div className="relative w-full h-[460px] sm:h-[540px] lg:h-full lg:col-span-5 xl:col-span-5 flex flex-col justify-end">
-            {/* The Image Container with Architectural Diagonal Angle matching Slide 1 */}
-            <div className="relative h-full w-full overflow-hidden bg-slate-900 lg:[clip-path:polygon(12%_0,100%_0,100%_100%,0%_100%)]">
+          {/* RIGHT SIDE: Factory image occupying approximately 50% of the hero on desktop */}
+          <div className="hidden lg:block relative w-full h-full min-h-full">
+            {/* Extends from directly below navbar to bottom of hero with subtle clean diagonal cut */}
+            <div className="relative h-full w-full overflow-hidden bg-slate-900 lg:[clip-path:polygon(5%_0,100%_0,100%_100%,0%_100%)]">
               <img
                 src={factoryImage}
                 alt="Najmat Alswab Steel Structure Production Facility"
-                className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                 loading="eager"
               />
 
-              {/* Dynamic lighting gradient matching the slide */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+              {/* Subtle lighting overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/20 pointer-events-none" />
 
-              {/* Top Accent Graphic Strip matching Slide 1 header angle right at top 0 */}
-              <div className="absolute top-0 right-0 z-20 flex items-center">
-                <div className="h-3.5 sm:h-4 w-28 bg-[#0284c7] -skew-x-12" />
-                <div className="h-3.5 sm:h-4 w-14 bg-[#28236d] -skew-x-12" />
+              {/* Top subtle accent graphic */}
+              <div className="absolute top-0 right-0 z-10 flex items-center">
+                <div className="h-2.5 w-20 bg-[#0284c7] -skew-x-12" />
+                <div className="h-2.5 w-10 bg-[#1e2547] -skew-x-12" />
               </div>
 
-              {/* Bottom Right Banner: DUBAI • UAE (Exact match to Slide 1) */}
+              {/* Facility Overlay Caption */}
+              <div className="absolute left-8 lg:left-12 top-6 z-10 rounded-xs bg-slate-950/70 backdrop-blur-xs px-3 py-1.5 text-[11px] font-mono text-white/95 border border-white/10 shadow-xs">
+                5,700 SQFT. Production Facility · Umm Al Quwain
+              </div>
+
+              {/* Bottom Right Location Badge: DUBAI · UAE */}
               <a
                 href="#contact"
                 onClick={scrollTo("contact")}
-                className="absolute right-0 bottom-0 z-20 flex items-center gap-2.5 bg-[#28236d] px-6 py-3.5 text-white shadow-2xl transition-all hover:bg-[#1e1954] [clip-path:polygon(14%_0,100%_0,100%_100%,0%_100%)] pl-9 sm:px-9 sm:py-4"
+                className="absolute right-0 bottom-0 z-20 flex items-center gap-2 bg-[#1e2547] px-6 py-3 text-white shadow-md transition-colors hover:bg-[#151a33] [clip-path:polygon(14%_0,100%_0,100%_100%,0%_100%)] pl-8"
                 title="Located in Dubai & Umm Al Quwain, UAE"
               >
-                <MapPin className="h-4 w-4 fill-white text-white shrink-0" />
-                <span className="font-poppins text-xs sm:text-sm font-bold uppercase tracking-widest">
-                  DUBAI &nbsp;•&nbsp; UAE
+                <MapPin className="h-3.5 w-3.5 text-[#0284c7] shrink-0" />
+                <span className="font-poppins text-xs font-bold uppercase tracking-widest">
+                  DUBAI &nbsp;·&nbsp; UAE
                 </span>
               </a>
-
-              {/* Facility Overlay Caption safely positioned under header */}
-              <div className="absolute left-6 lg:left-14 top-24 z-20 rounded-xs bg-black/65 backdrop-blur-xs px-3 py-1.5 text-[11px] font-mono text-white/95 border border-white/15 shadow-sm">
-                5,700 SQFT. Production Facility · Umm Al Quwain
-              </div>
             </div>
           </div>
         </div>
