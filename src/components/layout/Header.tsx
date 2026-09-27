@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-clean.png";
 import { company } from "@/content/company";
 
 const navLinks = [
@@ -16,11 +16,13 @@ const navLinks = [
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Scroll spy to highlight active section
+  // Scroll spy to highlight active section and track navbar scroll state
   useEffect(() => {
     const handleScroll = () => {
+      setIsScrolled(window.scrollY > 25);
       const scrollPos = window.scrollY + 120;
       const sectionIds = ["contact", "about", "chutes", "finishes", "capabilities"];
 
@@ -59,7 +61,13 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-all">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled || isMenuOpen
+          ? "bg-white/95 backdrop-blur-md border-b border-border shadow-xs"
+          : "bg-white/90 lg:bg-transparent border-b border-transparent"
+      }`}
+    >
       <div className="shell container-padding">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo & Brand Identity */}
@@ -75,13 +83,13 @@ export function Header() {
             <img
               src={logo}
               alt="Najmat Alswab Technical Services logo"
-              className="h-9 sm:h-11 w-auto rounded-xs border border-border/40 p-0.5 bg-white transition-transform group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-heading text-sm sm:text-base font-bold tracking-tight text-primary">
+              <span className="font-poppins text-sm sm:text-base font-bold tracking-tight text-[#28236d]">
                 NAJMAT ALSWAB
               </span>
-              <span className="datum text-[10px] text-muted-foreground">
+              <span className="font-poppins text-[10px] text-muted-foreground font-medium">
                 Technical Services L.L.C.
               </span>
             </span>
@@ -96,10 +104,12 @@ export function Header() {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`text-xs xl:text-sm font-medium tracking-wide transition-colors py-1 border-b-2 ${
+                  className={`text-xs xl:text-sm font-poppins font-medium tracking-wide transition-colors py-1 border-b-2 ${
                     isActive
-                      ? "text-accent border-accent font-semibold"
-                      : "text-foreground/80 border-transparent hover:text-accent hover:border-accent/40"
+                      ? "text-[#0284c7] border-[#0284c7] font-semibold"
+                      : isScrolled
+                      ? "text-foreground/80 border-transparent hover:text-[#0284c7] hover:border-[#0284c7]/40"
+                      : "text-[#28236d] border-transparent hover:text-[#0284c7] hover:border-[#0284c7]/40"
                   }`}
                 >
                   {link.name}
@@ -109,15 +119,23 @@ export function Header() {
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href={company.phoneHref}
-              className="flex items-center gap-1.5 font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+              className={`flex items-center gap-1.5 font-mono text-xs font-semibold transition-all px-3.5 py-1.5 rounded-full ${
+                isScrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "bg-white/80 backdrop-blur-xs text-[#28236d] hover:bg-white shadow-xs border border-white/60"
+              }`}
             >
-              <Phone className="h-3 w-3 text-accent" />
+              <Phone className="h-3.5 w-3.5 text-[#0284c7]" />
               <span>{company.phone}</span>
             </a>
-            <Button asChild size="sm">
+            <Button
+              asChild
+              size="sm"
+              className="bg-[#28236d] hover:bg-[#1e1954] text-white shadow-md font-poppins font-semibold"
+            >
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                 Project Inquiry
               </a>
